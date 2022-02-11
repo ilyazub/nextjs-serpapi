@@ -6,7 +6,7 @@ export function SearchResults({ results, isLoading, error }) {
     return <p>Loading <span className={styles.loading}></span></p>;
 
   if (!results || results.length === 0) {
-    return <p>Click "Search" &uarr; to continue.</p>;
+    return <p>Click &quot;Search&quot; &uarr; to continue.</p>;
   }
 
   if (error)
