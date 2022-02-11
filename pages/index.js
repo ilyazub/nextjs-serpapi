@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SearchResults } from "components/SearchResults";
 
 function HomePage() {
   const [q, setQ] = useState("coffee, cats");
@@ -58,31 +59,6 @@ function HomePage() {
         error={error}
       />
     </>
-  );
-}
-
-export function SearchResults({ results, isLoading, error }) {
-  if (isLoading) return <p>Loading...</p>;
-
-  if (!results || results.length === 0) {
-    return <p>Click "Search" &uarr; to continue.</p>;
-  }
-
-  if (error) return <p>Error: {error}</p>;
-
-  return (
-    <section>
-      <span>Search results:</span>
-      <ul>{results.map(SearchResult)}</ul>
-    </section>
-  );
-}
-
-function SearchResult(result, index) {
-  return (
-    <li key={index}>
-      {result.search_metadata.id} &rarr; {result.search_parameters.q}
-    </li>
   );
 }
 

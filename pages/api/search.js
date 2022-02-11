@@ -1,5 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
 const { GoogleSearch } = require("google-search-results-nodejs");
 const search = new GoogleSearch(process.env.SERP_API_KEY);
 

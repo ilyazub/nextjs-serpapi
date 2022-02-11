@@ -1,0 +1,43 @@
+/* ellipsis animation borrowed from https://stackoverflow.com/a/40991531/1291371 */
+.loading::after {
+  display: inline-block;
+  animation: dotty steps(1,end) 1s infinite;
+  content: '';
+}
+
+@keyframes dotty {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
+    100% { content: ''; }
+}
+
+.resultsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 1vmax;
+
+  margin: 0;
+  padding: 0;
+}
+
+.result {
+  flex-grow: 1;
+
+  flex: 1 1 calc(20% - 4vmax);
+  max-width: calc(20% - 4vmax);
+
+  padding: 1vmax;
+
+  list-style: none;
+
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+  transition: all 200ms ease-in-out;
+}
+
+.result:hover {
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.25);
+}
